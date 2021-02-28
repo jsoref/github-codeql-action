@@ -587,13 +587,13 @@
         },
 
         "guid": {
-          "description": "A stable, unique identifer for this external properties object, in the form of a GUID.",
+          "description": "A stable, unique identifier for this external properties object, in the form of a GUID.",
           "type": "string",
           "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$"
         },
 
         "runGuid": {
-          "description": "A stable, unique identifer for the run associated with this external properties object, in the form of a GUID.",
+          "description": "A stable, unique identifier for the run associated with this external properties object, in the form of a GUID.",
           "type": "string",
           "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$"
         },
@@ -771,7 +771,7 @@
         },
 
         "guid": {
-          "description": "A stable, unique identifer for the external property file in the form of a GUID.",
+          "description": "A stable, unique identifier for the external property file in the form of a GUID.",
           "type": "string",
           "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$"
         },
@@ -1813,7 +1813,7 @@
         },
 
         "guid": {
-          "description": "A unique identifer for the reporting descriptor in the form of a GUID.",
+          "description": "A unique identifier for the reporting descriptor in the form of a GUID.",
           "type": "string",
           "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$"
         },
@@ -2066,7 +2066,7 @@
         },
 
         "guid": {
-          "description": "A stable, unique identifer for the result in the form of a GUID.",
+          "description": "A stable, unique identifier for the result in the form of a GUID.",
           "type": "string",
           "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$"
         },
@@ -2573,7 +2573,7 @@
         },
 
         "guid": {
-          "description": "A stable, unique identifer for this object's containing run object in the form of a GUID.",
+          "description": "A stable, unique identifier for this object's containing run object in the form of a GUID.",
           "type": "string",
           "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$"
         },
@@ -2683,7 +2683,7 @@
       "properties": {
 
         "guid": {
-          "description": "A stable, unique identifer for the suprression in the form of a GUID.",
+          "description": "A stable, unique identifier for the suprression in the form of a GUID.",
           "type": "string",
           "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$"
         },
@@ -2912,7 +2912,7 @@
       "properties": {
 
         "guid": {
-          "description": "A unique identifer for the tool component in the form of a GUID.",
+          "description": "A unique identifier for the tool component in the form of a GUID.",
           "type": "string",
           "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$"
         },
