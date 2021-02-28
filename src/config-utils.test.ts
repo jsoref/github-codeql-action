@@ -1098,7 +1098,7 @@ test("path validations", (t) => {
   }
 });
 
-test("path sanitisation", (t) => {
+test("path sanitization", (t) => {
   // Dummy values to pass to validateAndSanitisePath
   const propertyName = "paths";
   const configFile = "./.github/codeql/config.yml";
