@@ -149,7 +149,7 @@ export async function runQueries(
     const queries = config.queries[language];
     if (queries.builtin.length === 0 && queries.custom.length === 0) {
       throw new Error(
-        `Unable to analyse ${language} as no queries were selected for this language`
+        `Unable to analyze ${language} as no queries were selected for this language`
       );
     }
 

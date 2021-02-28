@@ -7,7 +7,7 @@ inputs:
     required: false
     # If not specified the Action will check in several places until it finds the CodeQL tools.
   languages:
-    description: The languages to be analysed
+    description: The languages to be analyzed
     required: false
   token:
     default: ${{ github.token }}

@@ -624,11 +624,11 @@ async function getLanguagesInRepo(
 }
 
 /**
- * Get the languages to analyse.
+ * Get the languages to analyze.
  *
  * The result is obtained from the action input parameter 'languages' if that
  * has been set, otherwise it is deduced as all languages in the repo that
- * can be analysed.
+ * can be analyzed.
  *
  * If no languages could be detected from either the workflow or the repository
  * then throw an error.
@@ -647,7 +647,7 @@ async function getLanguages(
   logger.info(`Languages from configuration: ${JSON.stringify(languages)}`);
 
   if (languages.length === 0) {
-    // Obtain languages as all languages in the repo that can be analysed
+    // Obtain languages as all languages in the repo that can be analyzed
     languages = await getLanguagesInRepo(repository, apiDetails, logger);
     logger.info(
       `Automatically detected languages: ${JSON.stringify(languages)}`
