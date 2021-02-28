@@ -326,7 +326,7 @@ test("load non-empty input", async (t) => {
 
 test("Default queries are used", async (t) => {
   return await util.withTmpDir(async (tmpDir) => {
-    // Check that the default behaviour is to add the default queries.
+    // Check that the default behavior is to add the default queries.
     // In this case if a config file is specified but does not include
     // the disable-default-queries field.
     // We determine this by whether CodeQL.resolveQueries is called

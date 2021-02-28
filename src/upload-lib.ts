@@ -239,7 +239,7 @@ export function buildPayload(
       base_sha: undefined as undefined | string,
     };
 
-    // This behaviour can be made the default when support for GHES 3.0 is discontinued.
+    // This behavior can be made the default when support for GHES 3.0 is discontinued.
     if (
       gitHubVersion.type !== util.GitHubVariant.GHES ||
       semver.satisfies(gitHubVersion.version, `>=3.1`)

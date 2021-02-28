@@ -15,7 +15,7 @@ import { GITHUB_DOTCOM_URL, isLocalRun } from "./util";
  * Also see getOptionalInput.
  *
  * This allows us to get stronger type checking of required/optional inputs
- * and make behaviour more consistent between actions and the runner.
+ * and make behavior more consistent between actions and the runner.
  */
 export function getRequiredInput(name: string): string {
   return core.getInput(name, { required: true });
@@ -26,7 +26,7 @@ export function getRequiredInput(name: string): string {
  * Also see getRequiredInput.
  *
  * This allows us to get stronger type checking of required/optional inputs
- * and make behaviour more consistent between actions and the runner.
+ * and make behavior more consistent between actions and the runner.
  */
 export function getOptionalInput(name: string): string | undefined {
   const value = core.getInput(name);
