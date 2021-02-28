@@ -386,7 +386,7 @@ const filterPatternCharactersRegex = /.*[?+[\]!].*/;
 
 // Checks that a paths of paths-ignore entry is valid, possibly modifying it
 // to make it valid, or if not possible then throws an error.
-export function validateAndSanitisePath(
+export function validateAndSanitizePath(
   originalPath: string,
   propertyName: string,
   configFile: string,
@@ -879,7 +879,7 @@ async function loadConfig(
         throw new Error(getPathsIgnoreInvalid(configFile));
       }
       pathsIgnore.push(
-        validateAndSanitisePath(
+        validateAndSanitizePath(
           ignorePath,
           PATHS_IGNORE_PROPERTY,
           configFile,
@@ -898,7 +898,7 @@ async function loadConfig(
         throw new Error(getPathsInvalid(configFile));
       }
       paths.push(
-        validateAndSanitisePath(includePath, PATHS_PROPERTY, configFile, logger)
+        validateAndSanitizePath(includePath, PATHS_PROPERTY, configFile, logger)
       );
     }
   }

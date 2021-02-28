@@ -1072,13 +1072,13 @@ const validPaths = [
 ];
 const invalidPaths = ["a/***/b", "a/**b", "a/b**", "**"];
 test("path validations", (t) => {
-  // Dummy values to pass to validateAndSanitisePath
+  // Dummy values to pass to validateAndSanitizePath
   const propertyName = "paths";
   const configFile = "./.github/codeql/config.yml";
 
   for (const validPath of validPaths) {
     t.truthy(
-      configUtils.validateAndSanitisePath(
+      configUtils.validateAndSanitizePath(
         validPath,
         propertyName,
         configFile,
@@ -1088,7 +1088,7 @@ test("path validations", (t) => {
   }
   for (const invalidPath of invalidPaths) {
     t.throws(() =>
-      configUtils.validateAndSanitisePath(
+      configUtils.validateAndSanitizePath(
         invalidPath,
         propertyName,
         configFile,
@@ -1099,13 +1099,13 @@ test("path validations", (t) => {
 });
 
 test("path sanitization", (t) => {
-  // Dummy values to pass to validateAndSanitisePath
+  // Dummy values to pass to validateAndSanitizePath
   const propertyName = "paths";
   const configFile = "./.github/codeql/config.yml";
 
   // Valid paths are not modified
   t.deepEqual(
-    configUtils.validateAndSanitisePath(
+    configUtils.validateAndSanitizePath(
       "foo/bar",
       propertyName,
       configFile,
@@ -1116,7 +1116,7 @@ test("path sanitization", (t) => {
 
   // Trailing stars are stripped
   t.deepEqual(
-    configUtils.validateAndSanitisePath(
+    configUtils.validateAndSanitizePath(
       "foo/**",
       propertyName,
       configFile,
