@@ -107,7 +107,7 @@ The configuration file can be located in a different repository. This is useful 
 
 For information on how to write a configuration file, see "[Using a custom configuration file](https://help.github.com/en/github/finding-security-vulnerabilities-and-errors-in-your-code/configuring-code-scanning#using-a-custom-configuration-file)."
 
-If you only want to customise the queries used, you can specify them in your workflow instead of creating a config file, using the `queries` property of the `init` action:
+If you only want to customize the queries used, you can specify them in your workflow instead of creating a config file, using the `queries` property of the `init` action:
 
 ```yaml
 - uses: github/codeql-action/init@v1
