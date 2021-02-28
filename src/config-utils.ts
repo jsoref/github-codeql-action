@@ -588,7 +588,7 @@ export function getNoLanguagesError(): string {
 }
 
 export function getUnknownLanguagesError(languages: string[]): string {
-  return `Did not recognise the following languages: ${languages.join(", ")}`;
+  return `Did not recognize the following languages: ${languages.join(", ")}`;
 }
 
 /**

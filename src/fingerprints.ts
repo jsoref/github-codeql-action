@@ -200,7 +200,7 @@ export function resolveUriToFile(
   }
   if (uri.indexOf("://") !== -1) {
     logger.debug(
-      `Ignoring location URI "${uri}" as the scheme is not recognised`
+      `Ignoring location URI "${uri}" as the scheme is not recognized`
     );
     return undefined;
   }

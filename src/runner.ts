@@ -297,7 +297,7 @@ program
         language = parseLanguage(cmd.language);
         if (language === undefined || !config.languages.includes(language)) {
           throw new Error(
-            `"${cmd.language}" is not a recognised language. ` +
+            `"${cmd.language}" is not a recognized language. ` +
               `Known languages in this project are ${config.languages.join(
                 ", "
               )}.`
