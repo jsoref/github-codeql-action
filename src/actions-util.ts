@@ -396,7 +396,7 @@ export function getWorkflowRunID(): number {
 }
 
 /**
- * Get the analysis key paramter for the current job.
+ * Get the analysis key parameter for the current job.
  *
  * This will combine the workflow path and current job name.
  * Computing this the first time requires making requests to
