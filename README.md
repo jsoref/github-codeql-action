@@ -6,7 +6,7 @@ This action runs GitHub's industry-leading static analysis engine, CodeQL, again
 
 This project is released under the [MIT License](LICENSE).
 
-The underlying CodeQL CLI, used in this action, is licensed under the [GitHub CodeQL Terms and Conditions](https://securitylab.github.com/tools/codeql/license). As such, this action may be used on open source projects hosted on GitHub, and on  private repositories that are owned by an organisation with GitHub Advanced Security enabled.
+The underlying CodeQL CLI, used in this action, is licensed under the [GitHub CodeQL Terms and Conditions](https://securitylab.github.com/tools/codeql/license). As such, this action may be used on open source projects hosted on GitHub, and on  private repositories that are owned by an organization with GitHub Advanced Security enabled.
 
 ## Usage
 
