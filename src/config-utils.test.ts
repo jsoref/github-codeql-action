@@ -144,7 +144,7 @@ test("loading config saves config", async (t) => {
     // The saved config file should now exist
     t.true(fs.existsSync(configUtils.getPathToParsedConfigFile(tmpDir)));
 
-    // And that same newly-initialised config should now be returned by getConfig
+    // And that same newly-initialized config should now be returned by getConfig
     const config2 = await configUtils.getConfig(tmpDir, logger);
     t.deepEqual(config1, config2);
   });
