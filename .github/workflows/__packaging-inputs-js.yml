@@ -93,7 +93,7 @@ jobs:
       uses: ./../action/.github/actions/check-sarif
       with:
         sarif-file: ${{ runner.temp }}/results/javascript.sarif
-        queries-run: 
+        queries-run:
           javascript/example/empty-or-one-block,javascript/example/empty-or-one-block,javascript/example/other-query-block,javascript/example/two-block
         queries-not-run: foo,bar
 
