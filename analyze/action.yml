@@ -69,6 +69,8 @@ inputs:
     required: true
     default: "true"
   token:
+    description: "Token for accessing /code-scanning/analysis endpoints (used by `upload-database` and `upload`)"
+    required: false
     default: ${{ github.token }}
   matrix:
     default: ${{ toJson(matrix) }}

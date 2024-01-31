@@ -3,6 +3,7 @@ description: '[Experimental] Attempt to infer a build environment suitable for a
 author: 'GitHub'
 inputs:
   token:
+    description: "Token for accessing /code-scanning/analysis endpoints (used for ???)"
     default: ${{ github.token }}
   matrix:
     default: ${{ toJson(matrix) }}

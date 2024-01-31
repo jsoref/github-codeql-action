@@ -3,6 +3,7 @@ description: 'Attempt to automatically build code'
 author: 'GitHub'
 inputs:
   token:
+    description: "Token for accessing /code-scanning/analysis endpoints (used to for status reporting)"
     default: ${{ github.token }}
   matrix:
     default: ${{ toJson(matrix) }}
