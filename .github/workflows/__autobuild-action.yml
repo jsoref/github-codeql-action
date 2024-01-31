@@ -68,7 +68,10 @@ jobs:
       with:
         languages: csharp
         tools: ${{ steps.prepare-test.outputs.tools-url }}
+        token: ${{ secrets.CODEQL_TOKEN }}
     - uses: ./../action/autobuild
+      with:
+        token: ${{ secrets.CODEQL_TOKEN }}
       env:
       # Explicitly disable the CLR tracer.
         COR_ENABLE_PROFILING: ''
@@ -80,6 +83,7 @@ jobs:
     - uses: ./../action/analyze
       with:
         upload-database: false
+        token: ${{ secrets.CODEQL_TOKEN }}
     - name: Check database
       shell: bash
       run: |

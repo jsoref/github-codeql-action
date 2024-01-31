@@ -93,12 +93,14 @@ jobs:
       with:
         languages: go
         tools: ${{ steps.prepare-test.outputs.tools-url }}
+        token: ${{ secrets.CODEQL_TOKEN }}
     - name: Build code
       shell: bash
       run: go build main.go
     - uses: ./../action/analyze
       with:
         upload-database: false
+        token: ${{ secrets.CODEQL_TOKEN }}
     - shell: bash
       run: |
         # Once we start running Bash 4.2 in all environments, we can replace the

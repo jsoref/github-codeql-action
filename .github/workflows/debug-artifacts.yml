@@ -65,6 +65,7 @@ jobs:
           debug: true
           debug-artifact-name: my-debug-artifacts
           debug-database-name: my-db
+          token: ${{ secrets.CODEQL_TOKEN }}
       - uses: ./../action/.github/actions/setup-swift
         with:
           codeql-path: ${{ steps.init.outputs.codeql-path }}
@@ -73,6 +74,8 @@ jobs:
         run: ./build.sh
       - uses: ./../action/analyze
         id: analysis
+        with:
+          token: ${{ secrets.CODEQL_TOKEN }}
   download-and-check-artifacts:
     name: Download and check debug artifacts
     needs: upload-artifacts

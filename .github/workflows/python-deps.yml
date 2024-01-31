@@ -46,6 +46,7 @@ jobs:
         tools: latest
         languages: python
         setup-python-dependencies: false
+        token: ${{ secrets.CODEQL_TOKEN }}
 
     - name: Test Auto Package Installation
       run: |
@@ -93,6 +94,7 @@ jobs:
         tools: latest
         languages: python
         setup-python-dependencies: false
+        token: ${{ secrets.CODEQL_TOKEN }}
 
     - name: Test Auto Package Installation
       run: |
@@ -150,6 +152,7 @@ jobs:
         tools: latest
         languages: python
         setup-python-dependencies: false
+        token: ${{ secrets.CODEQL_TOKEN }}
 
     - name: Test Auto Package Installation
       env:

@@ -75,10 +75,12 @@ jobs:
         languages: javascript
         queries: security-extended
         tools: ${{ steps.prepare-test.outputs.tools-url }}
+        token: ${{ secrets.CODEQL_TOKEN }}
     - uses: ./../action/analyze
       with:
         output: ${{ runner.temp }}/results
         upload-database: false
+        token: ${{ secrets.CODEQL_TOKEN }}
     - name: Upload SARIF
       uses: actions/upload-artifact@v3
       with:

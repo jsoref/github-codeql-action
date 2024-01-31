@@ -13,9 +13,11 @@ steps:
     with:
       languages: cpp
       tools: ${{ steps.prepare-test.outputs.tools-url }}
+      token: ${{ secrets.CODEQL_TOKEN }}
   - uses: ./../action/autobuild
     with:
       working-directory: autobuild-dir
+      token: ${{ secrets.CODEQL_TOKEN }}
     env:
       CODEQL_EXTRACTOR_CPP_AUTOINSTALL_DEPENDENCIES: true
   - shell: bash

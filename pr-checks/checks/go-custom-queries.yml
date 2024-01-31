@@ -8,9 +8,11 @@ steps:
       languages: go
       config-file: ./.github/codeql/custom-queries.yml
       tools: ${{ steps.prepare-test.outputs.tools-url }}
+      token: ${{ secrets.CODEQL_TOKEN }}
   - name: Build code
     shell: bash
     run: ./build.sh
   - uses: ./../action/analyze
     with:
       upload-database: false
+      token: ${{ secrets.CODEQL_TOKEN }}

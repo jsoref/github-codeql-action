@@ -7,6 +7,7 @@ steps:
       config-file: ".github/codeql/codeql-config-packaging.yml"
       languages: javascript
       tools: ${{ steps.prepare-test.outputs.tools-url }}
+      token: ${{ secrets.CODEQL_TOKEN }}
   - name: Build code
     shell: bash
     run: ./build.sh
@@ -14,6 +15,7 @@ steps:
     with:
       output: "${{ runner.temp }}/results"
       upload-database: false
+      token: ${{ secrets.CODEQL_TOKEN }}
 
   - name: Check results
     uses: ./../action/.github/actions/check-sarif

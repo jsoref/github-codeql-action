@@ -121,6 +121,7 @@ jobs:
         languages: csharp,javascript
         source-root: x/y/z/some-path/tests/multi-language-repo
         debug: true
+        token: ${{ secrets.CODEQL_TOKEN }}
 
     - name: Build code
       shell: bash
@@ -141,6 +142,7 @@ jobs:
         ref: v1.1.0
         sha: 474bbf07f9247ffe1856c6a0f94aeeb10e7afee6
         checkout_path: x/y/z/some-path/tests/multi-language-repo
+        token: ${{ secrets.CODEQL_TOKEN }}
 
     - name: Verify SARIF after upload
       shell: bash

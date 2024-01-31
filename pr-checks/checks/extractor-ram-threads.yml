@@ -8,6 +8,7 @@ steps:
       languages: java
       ram: 230
       threads: 1
+      token: ${{ secrets.CODEQL_TOKEN }}
   - name: Assert Results
     shell: bash
     run: |

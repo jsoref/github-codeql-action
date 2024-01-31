@@ -74,6 +74,7 @@ jobs:
         languages: javascript
         source-root: ../new-source-root
         tools: ${{ steps.prepare-test.outputs.tools-url }}
+        token: ${{ secrets.CODEQL_TOKEN }}
     - uses: ./../action/analyze
       with:
         upload-database: false

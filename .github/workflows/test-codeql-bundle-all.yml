@@ -43,6 +43,7 @@ jobs:
       uses: ./../action/init
       with:
         tools: ${{ steps.prepare-test.outputs.tools-url }}
+        token: ${{ secrets.CODEQL_TOKEN }}
     - uses: ./../action/.github/actions/setup-swift
       with:
         codeql-path: ${{ steps.init.outputs.codeql-path }}
@@ -52,5 +53,6 @@ jobs:
     - uses: ./../action/analyze
       with:
         upload-database: false
+        token: ${{ secrets.CODEQL_TOKEN }}
     env:
       CODEQL_ACTION_TEST_MODE: true

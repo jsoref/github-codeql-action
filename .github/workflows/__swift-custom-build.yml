@@ -75,6 +75,7 @@ jobs:
       with:
         languages: swift
         tools: ${{ steps.prepare-test.outputs.tools-url }}
+        token: ${{ secrets.CODEQL_TOKEN }}
     - uses: ./../action/.github/actions/setup-swift
       with:
         codeql-path: ${{steps.init.outputs.codeql-path}}
@@ -88,6 +89,7 @@ jobs:
       id: analysis
       with:
         upload-database: false
+        token: ${{ secrets.CODEQL_TOKEN }}
     - name: Check database
       shell: bash
       run: |

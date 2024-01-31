@@ -33,6 +33,7 @@ jobs:
       uses: ./init
       with:
         languages: javascript
+        token: ${{ secrets.CODEQL_TOKEN }}
     - name: Remove empty database
       # allows us to run init a second time
       run: |
@@ -43,6 +44,7 @@ jobs:
       with:
         tools: latest
         languages: javascript
+        token: ${{ secrets.CODEQL_TOKEN }}
     - name: Compare default and latest CodeQL bundle versions
       id: compare
       env:
@@ -91,8 +93,11 @@ jobs:
         languages: javascript
         config-file: ./.github/codeql/codeql-config.yml
         tools: ${{ matrix.tools }}
+        token: ${{ secrets.CODEQL_TOKEN }}
     # confirm steps.init.outputs.codeql-path points to the codeql binary
     - name: Print CodeQL Version
       run: ${{steps.init.outputs.codeql-path}} version --format=json
     - name: Perform CodeQL Analysis
       uses: ./analyze
+      with:
+        token: ${{ secrets.CODEQL_TOKEN }}

@@ -6,6 +6,7 @@ steps:
     with:
       languages: csharp
       tools: ${{ steps.prepare-test.outputs.tools-url }}
+      token: ${{ secrets.CODEQL_TOKEN }}
   - uses: ./../action/autobuild
     env:
       # Explicitly disable the CLR tracer.
@@ -18,6 +19,7 @@ steps:
   - uses: ./../action/analyze
     with:
       upload-database: false
+      token: ${{ secrets.CODEQL_TOKEN }}
   - name: Check database
     shell: bash
     run: |

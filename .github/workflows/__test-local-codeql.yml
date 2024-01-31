@@ -70,6 +70,7 @@ jobs:
       uses: ./../action/init
       with:
         tools: ./codeql-bundle-linux64.tar.gz
+        token: ${{ secrets.CODEQL_TOKEN }}
     - uses: ./../action/.github/actions/setup-swift
       with:
         codeql-path: ${{ steps.init.outputs.codeql-path }}
@@ -79,5 +80,6 @@ jobs:
     - uses: ./../action/analyze
       with:
         upload-database: false
+        token: ${{ secrets.CODEQL_TOKEN }}
     env:
       CODEQL_ACTION_TEST_MODE: true

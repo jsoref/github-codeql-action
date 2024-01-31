@@ -48,6 +48,7 @@ jobs:
           debug: true
           debug-artifact-name: my-debug-artifacts
           debug-database-name: my-db
+          token: ${{ secrets.CODEQL_TOKEN }}
       - name: Build code
         shell: bash
         run: ./build.sh
@@ -56,6 +57,7 @@ jobs:
         with:
           expect-error: true
           ram: 1
+          token: ${{ secrets.CODEQL_TOKEN }}
   download-and-check-artifacts:
     name: Download and check debug artifacts after failure in analyze
     needs: upload-artifacts

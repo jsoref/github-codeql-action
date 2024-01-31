@@ -64,6 +64,7 @@ jobs:
       with:
         languages: C#,java-kotlin,swift,typescript
         tools: ${{ steps.prepare-test.outputs.tools-url }}
+        token: ${{ secrets.CODEQL_TOKEN }}
 
     - name: Check languages
       run: |

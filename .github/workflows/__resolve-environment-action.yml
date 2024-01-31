@@ -87,6 +87,7 @@ jobs:
         languages: ${{ matrix.version == 'stable-v2.13.4' && 'go' || 'go,javascript-typescript'
           }}
         tools: ${{ steps.prepare-test.outputs.tools-url }}
+        token: ${{ secrets.CODEQL_TOKEN }}
 
     - name: Resolve environment for Go
       uses: ./../action/resolve-environment

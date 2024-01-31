@@ -68,6 +68,7 @@ jobs:
     - uses: ./init
       with:
         languages: javascript
+        token: ${{ secrets.CODEQL_TOKEN }}
     - name: Fail
     # We want this job to pass if the Action correctly uploads the SARIF file for
     # the failed run.
@@ -81,6 +82,7 @@ jobs:
       if: false
       with:
         category: /test-codeql-version:${{ matrix.version }}
+        token: ${{ secrets.CODEQL_TOKEN }}
     env:
   # Internal-only environment variable used to indicate that the post-init Action
   # should expect to upload a SARIF file for the failed run.

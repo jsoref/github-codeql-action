@@ -71,12 +71,15 @@ jobs:
       with:
         languages: java
         tools: ${{ steps.prepare-test.outputs.tools-url }}
+        token: ${{ secrets.CODEQL_TOKEN }}
     - uses: ./../action/autobuild
       with:
         working-directory: autobuild-dir
+        token: ${{ secrets.CODEQL_TOKEN }}
     - uses: ./../action/analyze
       with:
         upload-database: false
+        token: ${{ secrets.CODEQL_TOKEN }}
     - name: Check database
       shell: bash
       run: |

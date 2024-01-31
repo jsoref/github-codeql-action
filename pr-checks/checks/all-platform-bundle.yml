@@ -17,3 +17,4 @@ steps:
   - uses: ./../action/analyze
     with:
       upload-database: false
+      token: ${{ secrets.CODEQL_TOKEN }}

@@ -74,10 +74,12 @@ jobs:
       with:
         languages: ruby
         tools: ${{ steps.prepare-test.outputs.tools-url }}
+        token: ${{ secrets.CODEQL_TOKEN }}
     - uses: ./../action/analyze
       id: analysis
       with:
         upload-database: false
+        token: ${{ secrets.CODEQL_TOKEN }}
     - name: Check database
       shell: bash
       run: |

@@ -19,6 +19,7 @@ steps:
   - uses: ./init
     with:
       languages: javascript
+      token: ${{ secrets.CODEQL_TOKEN }}
   - name: Fail
     # We want this job to pass if the Action correctly uploads the SARIF file for
     # the failed run.
@@ -32,3 +33,4 @@ steps:
     if: false
     with:
       category: "/test-codeql-version:${{ matrix.version }}"
+      token: ${{ secrets.CODEQL_TOKEN }}

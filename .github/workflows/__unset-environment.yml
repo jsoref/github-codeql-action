@@ -77,6 +77,7 @@ jobs:
       with:
         db-location: ${{ runner.temp }}/customDbLocation
         tools: ${{ steps.prepare-test.outputs.tools-url }}
+        token: ${{ secrets.CODEQL_TOKEN }}
     - uses: ./../action/.github/actions/setup-swift
       with:
         codeql-path: ${{ steps.init.outputs.codeql-path }}
@@ -90,6 +91,7 @@ jobs:
       id: analysis
       with:
         upload-database: false
+        token: ${{ secrets.CODEQL_TOKEN }}
     - shell: bash
       run: |
         CPP_DB="${{ fromJson(steps.analysis.outputs.db-locations).cpp }}"

@@ -6,7 +6,10 @@ steps:
       tools: ${{ steps.prepare-test.outputs.tools-url }}
       languages: cpp,csharp,java,javascript,python
       config-file: ${{ github.repository }}/tests/multi-language-repo/.github/codeql/custom-queries.yml@${{ github.sha }}
+      token: ${{ secrets.CODEQL_TOKEN }}
   - name: Build code
     shell: bash
     run: ./build.sh
   - uses: ./../action/analyze
+    with:
+      token: ${{ secrets.CODEQL_TOKEN }}

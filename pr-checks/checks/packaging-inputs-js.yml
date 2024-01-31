@@ -8,12 +8,14 @@ steps:
       languages: javascript
       packs: codeql-testing/codeql-pack1@1.0.0, codeql-testing/codeql-pack2, codeql-testing/codeql-pack3:other-query.ql
       tools: ${{ steps.prepare-test.outputs.tools-url }}
+      token: ${{ secrets.CODEQL_TOKEN }}
   - name: Build code
     shell: bash
     run: ./build.sh
   - uses: ./../action/analyze
     with:
       output: "${{ runner.temp }}/results"
+      token: ${{ secrets.CODEQL_TOKEN }}
 
   - name: Check results
     uses: ./../action/.github/actions/check-sarif
