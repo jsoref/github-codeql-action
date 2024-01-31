@@ -334,19 +334,19 @@ export async function sendStatusReport<S extends StatusReportBase>(
             getWorkflowEventName() === "push" &&
             process.env["GITHUB_ACTOR"] === "dependabot[bot]"
           ) {
-            core.setFailed(
+            core.warning(
               'Workflows triggered by Dependabot on the "push" event run with read-only access. ' +
                 "Uploading Code Scanning results requires write access. " +
                 'To use Code Scanning with Dependabot, please ensure you are using the "pull_request" event for this workflow and avoid triggering on the "push" event for Dependabot branches. ' +
                 "See https://docs.github.com/en/code-security/secure-coding/configuring-code-scanning#scanning-on-push for more information on how to configure these events.",
             );
           } else {
-            core.setFailed(e.message || GENERIC_403_MSG);
+            core.warning(e.message || GENERIC_403_MSG);
           }
-          return false;
+          return true;
         case 404:
-          core.setFailed(GENERIC_404_MSG);
-          return false;
+          core.warning(GENERIC_404_MSG);
+          return true;
         case 422:
           // schema incompatibility when reporting status
           // this means that this action version is no longer compatible with the API
@@ -362,9 +362,12 @@ export async function sendStatusReport<S extends StatusReportBase>(
 
     // something else has gone wrong and the request/response will be logged by octokit
     // it's possible this is a transient error and we should continue scanning
-    core.error(
+    core.warning(
       "An unexpected error occurred when sending code scanning status report.",
     );
+  } finally {
+    // this API is private and it is not critical that it succeed:
+    // https://github.com/github/codeql/issues/15462#issuecomment-1919186317
     return true;
   }
 }
