@@ -77,7 +77,7 @@ jobs:
           output: ${{ runner.temp }}/results
           upload-database: false
       - name: Upload SARIF
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: zstd-bundle.sarif
           path: ${{ runner.temp }}/results/javascript.sarif
